@@ -77,7 +77,7 @@ kubectl get svc
 
 ```
 NAME             TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)          AGE
-fastapi-app      LoadBalancer   10.120.14.105   35.226.27.152    8000:30965/TCP   5d5h
-kubernetes       ClusterIP      10.120.0.1      <none>           443/TCP          5d5h
-my-app-service   LoadBalancer   10.120.8.223    34.172.178.133   8100:31694/TCP   42s
+fastapi-app      LoadBalancer   xx.xxx.xx.xxx   xx.xxx.xx.xxx    8000:30965/TCP   5d5h
+kubernetes       ClusterIP      xx.xxx.x.x      <none>           443/TCP          5d5h
+my-app-service   LoadBalancer   xx.xxx.x.xxx    xx.xxx.xxx.xxx   8100:31694/TCP   42s
 ```

@@ -8,3 +8,8 @@ Create kubernetes secrets using command line
     --docker-username=<your-registry-username> \
     --docker-password=<your-password> \
     --docker-email=<your-email@gmail.com>
+    
+    
+    
+    
+{% include "my-app-deployment.yml" %}

@@ -1,0 +1,1 @@
+# deploy-app-k8s-with-private-registry

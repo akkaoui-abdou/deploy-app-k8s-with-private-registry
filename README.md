@@ -1,5 +1,7 @@
 # Pull Image from Private Docker Registry in Kubernetes cluster
 
+Create kubernetes secrets using command line
+======================
 
       kubectl create secret docker-registry my-registry-key \
     --docker-server=https://index.docker.io/v1/ \

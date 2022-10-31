@@ -39,6 +39,11 @@ spec:
           - containerPort: 8100
 ```
 
+## Deployment application on k8s
+
+```
+kubectl apply -f my-app-deployment.yml
+```
 
 ## Create file my-app-service.yml
     
@@ -55,4 +60,10 @@ spec:
       port: 8100
       targetPort: 8100
   type: LoadBalancer
+```
+
+## Deployment serivce on k8s
+
+```
+kubectl apply -f my-app-serivce.yml
 ```

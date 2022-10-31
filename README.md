@@ -1,7 +1,7 @@
 # Pull Image from Private Docker Registry in Kubernetes cluster
 
-Create kubernetes secrets using command line
-======================
+##Create kubernetes secrets using command line
+
 
       kubectl create secret docker-registry my-registry-key \
     --docker-server=https://index.docker.io/v1/ \
@@ -10,6 +10,49 @@ Create kubernetes secrets using command line
     --docker-email=<your-email@gmail.com>
     
     
+## Create file my-app-deployment.yml
     
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      imagePullSecrets:
+      - name: my-registry-key
+      containers:
+      - name: my-app
+        image: akkaoui/fastapi-app:v2
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8100
+```
+
+
+## Create file my-app-service.yml
     
-{% include "my-app-deployment.yml" %}
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 8100
+      targetPort: 8100
+  type: LoadBalancer
+```

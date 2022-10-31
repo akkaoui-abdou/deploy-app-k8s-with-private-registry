@@ -3,7 +3,7 @@
 ##Create kubernetes secrets using command line
 
 
-      kubectl create secret docker-registry my-registry-key \
+      kubectl create secret docker-registry your-registry-key \
     --docker-server=https://index.docker.io/v1/ \
     --docker-username=<your-registry-username> \
     --docker-password=<your-password> \
@@ -30,7 +30,7 @@ spec:
         app: my-app
     spec:
       imagePullSecrets:
-      - name: my-registry-key
+      - name: your-registry-key
       containers:
       - name: my-app
         image: akkaoui/fastapi-app:v2
